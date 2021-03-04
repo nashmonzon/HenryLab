@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from 'react';
+import axios from "axios";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { ThemeProvider } from "@material-ui/core";
+import Catalogue from "./components/Catalogue/Catalogue.jsx";
+import NavBar from "./components/NavBar/NavBar.jsx";
+import ProductCard from "./components/ProductCard/ProductCard.jsx";
+import {getProducts} from './Reducer/Action'
+import "./app.css"
+import LandingPage from './components/LandingPage/LandingPage.jsx';
 
 function App() {
+ 
+ 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider >
+      <BrowserRouter>
+        <Route exact path="/catalogue" component={NavBar} />
+        <Route exact path="/catalogue" component={Catalogue}/> 
+        <Route exact path="/" component={LandingPage} />
+      </BrowserRouter>
+    </ThemeProvider>
   );
 }
 

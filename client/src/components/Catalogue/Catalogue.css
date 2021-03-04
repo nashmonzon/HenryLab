@@ -1,0 +1,15 @@
+.filtro{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100%;
+    
+}
+
+.paginationInCatalogue {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100%;
+    margin-top: 20;
+}

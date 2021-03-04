@@ -1,0 +1,22 @@
+
+  
+  .pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    margin-top: 20px;
+    border: 1px solid #ddd;
+
+  }
+  
+  .pagination a.active {
+    background-color: #212121;
+    color: white;
+  }
+  
+  .pagination a:hover:not(.active) {background-color: rgb(139, 139, 139);}
+
+  .nav{
+      display: inline-block;
+  }
