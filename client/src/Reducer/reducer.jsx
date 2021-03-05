@@ -1,7 +1,9 @@
-import { GET_PRODUCT, MAY_PRICE, MIN_PRICE, NEW_PRODUCT, USED_PRODUCT } from './Containers';
+import { GET_PRODUCT, MAY_PRICE, MIN_PRICE, NEW_PRODUCT, USED_PRODUCT,  } from './Containers';
 
 const initialState = {
     products: [],
+    error: '',
+  
 }
 
 
@@ -13,6 +15,13 @@ export default function (state = initialState, action) {
                 ...state,
                 products: action.payload.results
             }
+        case "ERROR":
+            return {
+                ...state,
+                error: "Hubo un Error"
+            }
+                       
+                
         case MAY_PRICE:
             return {
                 ...state,
@@ -39,5 +48,5 @@ export default function (state = initialState, action) {
         }
     }
 
-    // aca te falta poner un "case default" para que funcione el switch... sin eso rompe
+   
 }

@@ -1,18 +1,22 @@
 import axios from 'axios';
 import * as actions from './Containers';
 
-export function getProducts(input) {
-console.log(input)
-  return async (dispatch) => {
-    const response = await axios.get(`http://localhost:3001/api/search?q=${input}`)
-    console.log(response)
-    dispatch({
 
-      type: actions.GET_PRODUCT,
-      payload: response.data,
-    })
+export function getProducts(input) {
+ 
+  return function(dispatch){
+      axios.get(`http://localhost:3001/api/search?q=${input}`)
+      .then(res => {
+          console.log(res.data)
+          dispatch({ type: actions.GET_PRODUCT, payload: res.data})
+      })
+      .catch(err => {
+          console.log(err)
+          dispatch({ type: "ERROR", payload: err})
+      })
   }
 }
+
 
 export function mayorPrecio() {
   return function (dispatch) {

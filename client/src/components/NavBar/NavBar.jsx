@@ -26,7 +26,8 @@ function NavBar (){
     // e.preventDefault()
      dispatch(getProducts(input))
   }
-
+ 
+  
 
   
 
@@ -37,7 +38,7 @@ function NavBar (){
          
 
           <Typography variant="h6" className={classes.title}>
-          <Link to='/' className={classes.textLink}><h1 >My<span className={classes.colorText}>Nash</span>App</h1></Link>
+          <Link to='/' className={classes.textLink}  ><h1 >My<span className={classes.colorText}>Nash</span>App</h1></Link>
           </Typography>
         
           {/* <div className={classes.search}> */}

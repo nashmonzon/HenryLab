@@ -14,6 +14,7 @@ const Catalogue = () => {
     const dispatch = useDispatch();
     const classes = catalogueStyles();
     const products = useSelector(store => store.products)
+    const Error = useSelector(store => store.error)
     const [pageActual, setPageActual] = useState(1);
     const prodsPorPage = 30
 
@@ -27,7 +28,7 @@ const Catalogue = () => {
 
     return (
         <div>
-            
+            {Error ? <p>No Hay resultados para tu busqueda</p> : null}
             <div className='filtro'>
                 {<Filter />}
             </div>
